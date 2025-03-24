@@ -6,7 +6,7 @@
 }
 
 .container {
-    background: url('img.jpg') no-repeat; 
+    background: url('./assets/img.jpg') no-repeat; 
 }
 
 .container header h1 {
