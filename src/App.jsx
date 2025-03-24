@@ -24,15 +24,15 @@ function App() {
                   <input onBlur={(e) => setNome(e.target.value)} type="text" placeholder='Nome' required />
                 </div>
                 <div className="input-box">
-                  <input onBlur={(e) => setPeso(e.target.value)} type="number" placeholder='Peso' required />
+                  <input onBlur={(e) => setPeso(e.target.value)} type="text" inputMode='numeric' placeholder='Peso' required />
                 </div>
                 <div className="input-box">
-                  <input onBlur={(e) => setIdade(e.target.value)} type="number" placeholder='Idade' required />
+                  <input onBlur={(e) => setIdade(e.target.value)} type="text" inputMode='numeric' placeholder='Idade' required />
                 </div>
                 <div className="input-box">
-                  <input onBlur={(e) => setAltura(e.target.value)} type="number" placeholder='Altura' required />
+                  <input onBlur={(e) => setAltura(e.target.value)} type="text" inputMode='numeric' placeholder='Altura' required />
                 </div>
-                <button className='button' type='submit'>Enviar</button>
+                <button onClick={(e) => e.preventDefault(setClique(true))} className='button' type='submit'>Enviar</button>
               </form>
             </div>
 
