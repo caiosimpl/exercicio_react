@@ -1,17 +1,22 @@
 import './Resultado.modules.css'
+import { useState } from 'react';
 
 const Resultado = ({nome, altura, idade, peso, click}) => {
     const alturaEmMetros = (altura/100);
-    const imc = peso/(alturaEmMetros**2)
+    const [clique, setClique] = useState(false);
+    const imc = peso/(alturaEmMetros**2);
     let display;
-    click ? display = 'flex' : display = 'none';
-    return (
-        <div className='popup' style={{display: display}}>
-            <div className="texto">
-                <h1>Resultado: </h1>
-                <h4>{nome}, você tem {alturaEmMetros}M, {idade} anos, {peso}KG.</h4>
-                <h4>Seu IMC atualmente é de: {imc.toFixed(2)}</h4>
-                <button type='reset'>Fechar</button>
+    clique ? display = 'flex' : display = 'none';
+        return (         
+        <div>
+            <button onClick={(e) => e.preventDefault(setClique(true))} className='wrapper, button' type='submit'>Enviar</button>       
+            <div className='popup' style={{display: display}}>
+                <div className="texto">
+                    <h1>Resultado: </h1>
+                    <h4>{nome}, você tem {alturaEmMetros}M, {idade} anos, {peso}KG.</h4>
+                    <h4>Seu IMC atualmente é de: {imc.toFixed(2)}</h4>
+                    <button onClick={(e) => e.preventDefault(setClique(false))} type='reset'>Fechar</button>
+                </div>
             </div>
         </div>
     )

@@ -60,13 +60,6 @@
     color: var(--corTexto);
 }
 
-.button {
-    width: 100%;
-    border-radius: 25px;
-    padding: 12px;
-    margin-bottom: 20px;
-    background-color: var(--corSecundaria);
-}
 
 :root {
     --corPrincipal: #8D1EFF;

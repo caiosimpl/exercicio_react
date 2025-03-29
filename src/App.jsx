@@ -8,7 +8,6 @@ function App() {
     const [peso, setPeso] = useState(0);
     const [altura, setAltura] = useState(0);
     const [idade, setIdade] = useState(0);
-    const [clique, setClique] = useState(false);
     return (
       <>
       <div className='container'> 
@@ -32,12 +31,11 @@ function App() {
                 <div className="input-box">
                   <input onBlur={(e) => setAltura(e.target.value)} type="text" inputMode='numeric' placeholder='Altura' required />
                 </div>
-                <button onClick={(e) => e.preventDefault(setClique(true))} className='button' type='submit'>Enviar</button>
+                <Resultado nome={nome} altura={altura} idade={idade} peso={peso}></Resultado>
               </form>
             </div>
 
           </div>
-        <Resultado nome={nome} altura={altura} idade={idade} peso={peso} click={clique}></Resultado>
       </div>
       </>
     )
