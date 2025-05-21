@@ -1,7 +1,14 @@
-import './Resultado.modules.css'
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const Resultado = ({nome, altura, idade, peso, click}) => {
+import './Resultado.modules.css'
+
+
+const Resultado = () => {
+    const { nome, peso, idade, altura } = useSelector((state) => state.form)
+
+
+
     const alturaEmMetros = (altura/100);
     const [clique, setClique] = useState(false);
     const imc = peso/(alturaEmMetros**2);
